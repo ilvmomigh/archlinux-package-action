@@ -1,10 +1,22 @@
-- name: Validate package
-  uses: your-username/archlinux-package-action@main
-  with:
-    flags: '-si --noconfirm'
+name: Build Package
 
-- name: Upload package
-  uses: actions/upload-artifact@v4
-  with:
-    name: yay-bin
-    path: ${{ github.workspace }}/*.pkg.tar.zst   
+on:
+  push:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build package
+        uses: ilvm0migh/archlinux-package-action@main
+        with:
+          flags: '-si --noconfirm'
+
+      - name: Upload package
+        uses: actions/upload-artifact@v4
+        with:
+          name: yay-bin
+          path: ${{ github.workspace }}/*.pkg.tar.zst   
