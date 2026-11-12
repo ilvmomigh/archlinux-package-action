@@ -98,4 +98,9 @@ sudo cp -fv PKGBUILD "$WORKPATH"/PKGBUILD
 if [[ -e .SRCINFO ]]; then
     sudo cp -fv .SRCINFO "$WORKPATH"/.SRCINFO
 fi
+
+if ls *.pkg.tar.zst &>/dev/null; then
+    sudo cp -fv *.pkg.tar.zst "$WORKPATH"/
+fi
+echo "::endgroup::"
 echo "::endgroup::"
