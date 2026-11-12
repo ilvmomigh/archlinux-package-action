@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Build package
-        uses: ilvm0migh/archlinux-package-action@main
+        uses: ilvmomigh/archlinux-package-action@main
         with:
           flags: '-si --noconfirm'
 
