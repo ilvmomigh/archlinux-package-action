@@ -12,7 +12,7 @@ USER builder
 
 # Install yay
 RUN git clone https://aur.archlinux.org/yay-bin.git
-RUN cd yay-bin && makepkg -si --noconfirm
+
 
 # Copy files
 COPY LICENSE README.md /
